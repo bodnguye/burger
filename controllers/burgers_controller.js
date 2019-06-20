@@ -13,7 +13,14 @@ router.get('/', function(req,res) {
           };
         console.log(burgerObject);
         res.render('index', burgerObject);
-    })
-})
+    });
+});
+
+router.put('/burgers/update', function(req, res) {
+    burger.updateOne(req.body.burger_id, function(result) {
+        console.log("result");
+        res.redirect('/');
+    });
+});
 
 module.exports = router;
