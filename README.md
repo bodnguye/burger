@@ -5,7 +5,7 @@
 **Created on**: `June 19 2019`
 
 ## Introduction
-"FriendFinder" is a compatibility-based application -- basically a dating app. This full-stack site will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
+This app is a burger logger with MySQL, Node, Express, Handlebars and Sequelize, and follows the MVC design pattern.
 
 Link to Friend-Finder Website: `https://aqueous-waters-75422.herokuapp.com/`
 
