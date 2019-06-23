@@ -41,7 +41,9 @@ function printQuestionMarks(num) {
 
 var orm = {
     selectAll: function(table, cb) {
-        connection.query('SELECT * FROM ' + table + ';', function(err, result) {
+        var queryString = "SELECT * FROM " + table;
+        
+        connection.query(queryString, function(err, result) {
             if(err) throw err;
             cb(result)
         })
