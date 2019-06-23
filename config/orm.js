@@ -40,15 +40,15 @@ function printQuestionMarks(num) {
   }
 
 var orm = {
-    selectAll: function(tableInput, cb) {
-        connection.query('SELECT * FROM ' + tableInput + ';', function(err, result) {
+    selectAll: function(table, cb) {
+        connection.query('SELECT * FROM ' + table + ';', function(err, result) {
             if(err) throw err;
             cb(result)
         })
     },
 
-    create: function(table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" +  printQuestionMarks(vals.length) + ") ";
+    createOne: function(table, cols, vals, cb) {
+        var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") VALUES (" +  printQuestionMarks(vals.length) + ") ";
     
         console.log(queryString);
     
@@ -62,15 +62,11 @@ var orm = {
       },
 
     updateOne: function(table, objColVals, condition, cb) {
-        // var queryString = "UPDATE " + table;
+        var queryString = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + condition;
     
-        // queryString += " SET ";
-        // queryString += objToSql(objColVals);
-        // queryString += " WHERE ";
-        // queryString += condition;
-    
-        // console.log(queryString);
-        connection.query("UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + condition, function(err, result) {
+        console.log(queryString);
+
+        connection.query(queryString, function(err, result) {
           if (err) {
             throw err;
           }
@@ -78,13 +74,6 @@ var orm = {
           cb(result);
         });
       }
-
-    // updateOne: function(tableInput, condition, cb) {
-    //     connection.query('UPDATE ' + tableInput + ' SET devoured=true WHERE id='+condition+';', function(err, result) {
-    //         if(err) throw err;
-    //         cb(result)
-    //     })
-    // }
 }
 
 // Export the orm object for the model (burger.js).

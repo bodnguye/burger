@@ -1,8 +1,4 @@
-<li>
-	{{burger_name}}
-
-	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
-		{{#if devour}}Make again!{{else}}Eat!{{/if}}
-	</button>
-
-</li>
+<tr class="table-row">
+    <td class="table-first-col">{{id}}. {{burger_name}}</td>
+    <td><button class="change-devour" data-id="{{id}}">Devour it!</button></td> <br>
+</tr>
