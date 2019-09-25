@@ -7,8 +7,6 @@
 ## Introduction
 This app is a burger logger with MySQL, Node, Express, Handlebars and Sequelize, and follows the MVC design pattern.
 
-Link to Friend-Finder Website: `https://aqueous-waters-75422.herokuapp.com/`
-
 ## Technologies Used
 - Node.js
 - JavaScript
@@ -21,3 +19,7 @@ Link to Friend-Finder Website: `https://aqueous-waters-75422.herokuapp.com/`
 - Node Packages:
     - express
     - express-handlebars
+    
+## Demo
+[Click here to Demo!](https://aqueous-waters-75422.herokuapp.com/)
+
