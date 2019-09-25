@@ -1,33 +1,40 @@
-<h1>Eat A burger</h1>
+<div class="container">
 
-<h2>Burgers that are ready to be devoured!</h2>
+  <h1 class="text-center"> <img src="/assets/img/favicon.jpg" width="35" height="35" />
+    Eat-Da-Burger <img src="/assets/img/favicon.jpg" width="35" height="35" /></h1>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{> burgers/burger-block}}
-        {{/unless}}
-    {{/each}}
-</ul>
+  <div id="ready">
+    <h2>Burgers that are ready to be devoured!</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
 
-<h2>Burgers that have been devoured!</h2>
+  <div id="devoured">
+    <h2>Burgers that have been devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
       <div>{{id}}. {{burger_name}}</div>
-    {{/if}}
-  {{/each}}
-</ul>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
-        <div class="form-group">
-            <label for="name"></label>
-            <textarea id="name" name="burger-name" rows="2" cols="20" placeholder="Place Your Order"></textarea>
-        </div>
-        <button type="submit">Add Burger</button>
-    </form>     
+<div id="order"> 
+  <h2>Add a Burger</h2>
+  <form class="create-form">
+    <div class="form-group">
+      <label for="name"></label>
+      <textarea id="name" name="burger-name" rows="2" cols="20" placeholder="Place Your Order"></textarea>
+    </div>
+    <button type="submit">Add Burger</button>
+  </form>
+</div>
 
-
-
+</div>
